@@ -4,6 +4,6 @@ kind: Kustomization
 namespace: default
 
 resources:
-- flux-mc-demo-source.yaml
+- flux-mc-demo.yaml
 - organizations.yaml
 - myorg.yaml
