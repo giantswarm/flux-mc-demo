@@ -1,0 +1,21 @@
+---
+# Generated with:
+#
+#   flux create source git "flux-mc-demo" \
+#     --namespace="org-myorg" \
+#     --url="https://github.com/giantswarm/flux-mc-demo.git" \
+#     --branch="main" \
+#     --interval="3m0s" \
+#     --export
+#
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-mc-demo
+  namespace: org-myorg
+spec:
+  interval: 3m0s
+  ref:
+    branch: main
+  url: https://github.com/giantswarm/flux-mc-demo.git
+

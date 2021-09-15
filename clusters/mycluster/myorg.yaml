@@ -1,0 +1,27 @@
+---
+# Generated with:
+#
+#   flux create kustomization "myorg" \
+#     --namespace="default" \
+#     --prune=true \
+#     --source="GitRepository/flux-mc-demo" \
+#     --path="./infrastructure/myorg " \
+#     --depends-on="organizations" \
+#     --service-account="automation" \
+#     --export
+#
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: myorg
+  namespace: default
+spec:
+  dependsOn:
+  - name: organizations
+  interval: 1m0s
+  path: ./infrastructure/myorg
+  prune: true
+  serviceAccountName: automation
+  sourceRef:
+    kind: GitRepository
+    name: flux-mc-demo

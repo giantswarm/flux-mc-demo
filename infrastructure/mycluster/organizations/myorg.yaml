@@ -1,0 +1,9 @@
+# Generated with:
+#
+#   kubectl gs template organization --name="example-org-a"
+#
+apiVersion: security.giantswarm.io/v1alpha1
+kind: Organization
+metadata:
+  name: example-org-a
+spec: {}

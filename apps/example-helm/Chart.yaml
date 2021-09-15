@@ -1,0 +1,7 @@
+apiVersion: v2
+name: example-helm
+description: Cluster setup (which in fact is a ConfigMap, but that's ok for the demo).
+
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,28 @@
+---
+# Generated with (with `healthChecks` added manually):
+#
+#   flux create kustomization "organizations" \
+#     --namespace="default" \
+#     --prune=true \
+#     --source="GitRepository/flux-mc-demo" \
+#     --path="./infrastructure/organizations " \
+#     --service-account="automation" \
+#     --export
+#
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: organizations
+  namespace: default
+spec:
+  interval: 1m0s
+  path: ./infrastructure/organizations
+  prune: true
+  serviceAccountName: automation
+  sourceRef:
+    kind: GitRepository
+    name: flux-mc-demo
+  healthChecks:
+    - apiVersion: v1
+      kind: Namespace
+      name: org-myorg

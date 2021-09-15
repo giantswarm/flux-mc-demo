@@ -1,0 +1,27 @@
+---
+# Generated with:
+#
+#   flux create helmrelease "example-helm" \
+#     --namespace="org-myorg" \
+#     --source="GitRepository/flux-mc-demo" \
+#     --chart="./apps/example-helm" \
+#     --interval="3m0s" \
+#     --service-account="default" \
+#     --export
+#
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: example-helm
+  namespace: org-myorg
+spec:
+  chart:
+    spec:
+      chart: ./apps/example-helm
+      sourceRef:
+        kind: GitRepository
+        name: flux-mc-demo
+  install: {}
+  interval: 3m0s
+  serviceAccountName: default
+
