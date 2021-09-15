@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: org-myorg
 
 resources:
+- rbac.yaml
 - flux-mc-demo-source.yaml
 - example-helm.yaml
